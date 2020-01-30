@@ -87,19 +87,51 @@ Car.prototype.drive = function(distance) {
   let lostGas = distance / this.milesPerGallon;
   (this.odometer = this.odometer + distance) &&
     (this.tank = this.tank - lostGas);
-
-  // if (this.tank > 0) {
-  //   this.odometer = this.odometer + distance;
-  // } else if (this.tank === 0) {
-  //   return `I ran out of fuel at ${this.odometer} miles!`;
-  // }
-  // else {
-  //   return `I ran out of fuel at ${this.odometer} miles!`;
-  // }
-
-  // &&
-  // this.tank = this.tank - distance * milesPerGallon;
 };
+
+// Car.prototype.drive = function(distance) {
+//   let lostGas = distance / this.milesPerGallon;
+//   let drivingMiles = this.tank * this.milesPerGallon;
+//   (this.odometer = this.odometer + distance) &&
+//     (this.tank = this.tank - lostGas);
+//   if (this.tank === 0) {
+//     this.odometer = this.odometer + drivingMiles;
+//     return `I ran out of fuel at ${this.odometer + drivingMiles} miles!`;
+//   }
+// };
+
+//   let lostGas = distance / this.milesPerGallon;
+//   (this.odometer = this.odometer + distance) &&
+//     (this.tank = this.tank - lostGas);
+//   if (this.tank === 0) {
+//     return `I ran out of fuel at ${this.odometer} miles!`;
+//   }
+// };
+
+//   let lostGas = distance / this.milesPerGallon;
+//   if (this.tank > 0) {
+//     (this.odometer = this.odometer + distance) &&
+//       (this.tank = this.tank - lostGas);
+//   } else {
+//     return `I ran out of fuel at ${this.odometer} miles!`;
+//   }
+// };
+
+//   let lostGas = distance / this.milesPerGallon;
+//   if (this.tank === 0) {
+//     return `I ran out of fuel at ${this.odometer} miles!`;
+//   } else {
+//     (this.odometer = this.odometer + distance) &&
+//       (this.tank = this.tank - lostGas);
+//   }
+// };
+
+//   let lostGas = distance / this.milesPerGallon;
+//   let drivingMiles = this.tank * this.milesPerGallon;
+//   if (distance < drivingMiles) {
+//     return `I ran out of fuel at ${this.odometer} miles!`;
+//   }
+// };
 
 /*
   TASK 3
@@ -129,10 +161,14 @@ Baby.prototype.play = function() {
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+
+  1. Window/Global Object Binding: if none of the other rules apply (below) "this" default to the window. This is when this is in the global scope.
+
+  2. Implicit Binding: when a function is invoked (as a method) - `this` will refer to the object before the dot notating the method.
+
+  3. New binding: when using a constructor function "this" will refer to the specific instance of the object that is created.
+
+  4. Explicit binding: when using the functions .call, .apply, and .bind you can override what "this" refers to and tell it to look at other objects instead.
 */
 
 ///////// END OF CHALLENGE /////////
